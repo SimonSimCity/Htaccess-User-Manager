@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Administration</title>
+
+	<link type="text/css" href="/css/screen.css" rel="stylesheet" media="all" />
+</head>
+<body>
+<div class="header">
+	<ul>
+		<li><a href="/?action=changePassword">Mein Passwort ändern</a></li>
+		<?php if($firewall->hasUserAccess()) : ?>
+		<li class="current"><a href="/?action=listUsers">Benutzer auflisten</a></li>
+		<?php endif; ?>
+	</ul>
+</div>
+
+<h1>Benutzerübersicht</h1>
+
+<?php if (isset($_GET['success'])) : ?>
+<div class="flash">
+	<?php if (empty($_GET['message'])) : ?>
+	<div class="success">Passwort wurde erfolgreich geändert.</div>
+	<?php else : ?>
+	<div class="error"><?php echo $_GET['message'] ?></div>
+	<?php endif; ?>
+</div>
+<?php endif; ?>
+
+<div id="main_content">
+	<table>
+		<tr>
+			<th>Username</th>
+		</tr>
+		<?php foreach($userManager->getUsers() as $user) : ?>
+			<tr>
+				<td><?php echo $user->getUsername() ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+</div>
+</body>
+</html>

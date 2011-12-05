@@ -1,0 +1,9 @@
+This PHP-Script is build to manage user-lists that're used in a http-basic-authentication process.
+The authentication for this script itself is done using this user-list. Therefore you have to relogin if you're
+changing your password.
+It's a usual php-script. There's no need to add an .htaccess file or some special configuration.
+
+You just need to copy the file config.template.php to config.php - that's all.
+Now the file htusers will be used as user-list. It contains only one user called "admin" whose password is "admin".
+
+Feel free to use and modify the script. Please provide your improvements as forge of this repository.

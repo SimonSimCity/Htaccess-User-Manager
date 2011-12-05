@@ -34,7 +34,7 @@ class UserController {
 			}
 
 			header("HTTP/1.1 303 See Other");
-			header("Location: /?action=changePassword&success=".(int)$success."&message=".urlencode($message));
+			header("Location: {$_SERVER["SCRIPT_NAME"]}?action=changePassword&success=".(int)$success."&message=".urlencode($message));
 		} else {
 			header("HTTP/1.1 403 Forbidden");
 			include_once __DIR__ . "/templates/403.phtml";

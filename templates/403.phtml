@@ -9,9 +9,9 @@
 <body>
 <div class="header">
 	<ul>
-		<li><a href="/?action=changePassword">Mein Passwort ändern</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Mein Passwort ändern</a></li>
 		<?php if($firewall->hasUserAccess()) : ?>
-		<li><a href="/?action=listUsers">Benutzer auflisten</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">Benutzer auflisten</a></li>
 		<?php endif; ?>
 	</ul>
 </div>

@@ -9,9 +9,9 @@
 <body>
 <div class="header">
 	<ul>
-		<li class="current"><a href="/?action=changePassword">Mein Passwort ändern</a></li>
+		<li class="current"><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Mein Passwort ändern</a></li>
 		<?php if($firewall->hasUserAccess()) : ?>
-		<li><a href="/?action=listUsers">Benutzer auflisten</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">Benutzer auflisten</a></li>
 		<?php endif; ?>
 	</ul>
 </div>
@@ -29,7 +29,7 @@
 <?php endif; ?>
 
 <div id="main_content">
-	<form action="/?action=updatePassword" method="post">
+	<form action="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=updatePassword" method="post">
 		<fieldset>
 			<label for="user_password">neues Passwort:</label>
 			<input type="password" name="password" id="user_password" />

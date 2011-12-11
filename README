@@ -3,7 +3,14 @@ The authentication for this script itself is done using this user-list. Therefor
 changing your password.
 It's a usual php-script. There's no need to add an .htaccess file or some special configuration.
 
+If you're using Apache and run php as FastCGI-module you may also run into this issue:
+http://stackoverflow.com/questions/6775852/symfony-2-receiving-anonymous-token-after-basic-authentication#answers
+
 You just need to copy the file config.template.php to config.php - that's all.
 Now the file htusers will be used as user-list. It contains only one user called "admin" whose password is "admin".
 
 Feel free to use and modify the script. Please provide your improvements as forge of this repository.
+
+TODO:
+* Implement sha1 password-encryption compatible to the apache-implementation: http://httpd.apache.org/docs/2.1/misc/password_encryptions.html
+* Create, edit and delete users as admin

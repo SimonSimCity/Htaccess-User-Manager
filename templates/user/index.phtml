@@ -9,19 +9,19 @@
 <body>
 <div class="header">
 	<ul>
-		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Mein Passwort ändern</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Change Password</a></li>
 		<?php if($firewall->hasUserAccess()) : ?>
-		<li class="current"><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">Benutzer auflisten</a></li>
+		<li class="current"><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">List Users</a></li>
 		<?php endif; ?>
 	</ul>
 </div>
 
-<h1>Benutzerübersicht</h1>
+<h1>List of known users</h1>
 
 <?php if (isset($_GET['success'])) : ?>
 <div class="flash">
 	<?php if (empty($_GET['message'])) : ?>
-	<div class="success">Passwort wurde erfolgreich geändert.</div>
+	<div class="success">Password changed successfully.</div>
 	<?php else : ?>
 	<div class="error"><?php echo $_GET['message'] ?></div>
 	<?php endif; ?>

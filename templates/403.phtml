@@ -9,9 +9,9 @@
 <body>
 <div class="header">
 	<ul>
-		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Mein Passwort ändern</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=changePassword">Change Password</a></li>
 		<?php if($firewall->hasUserAccess()) : ?>
-		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">Benutzer auflisten</a></li>
+		<li><a href="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=listUsers">List Users</a></li>
 		<?php endif; ?>
 	</ul>
 </div>
@@ -21,7 +21,7 @@
 <?php if (isset($_GET['success'])) : ?>
 <div class="flash">
 	<?php if (empty($_GET['message'])) : ?>
-	<div class="success">Passwort wurde erfolgreich geändert.</div>
+	<div class="success">Password changed successfully.</div>
 	<?php else : ?>
 	<div class="error"><?php echo $_GET['message'] ?></div>
 	<?php endif; ?>
@@ -30,7 +30,7 @@
 
 <div id="main_content">
 	<h2 style="text-align: center; margin-top: 7em;">403</h2>
-	<h3 style="text-align: center; margin-top: 1em;">Zugriff verweigert</h3>
+	<h3 style="text-align: center; margin-top: 1em;">Access denied</h3>
 </div>
 </body>
 </html>

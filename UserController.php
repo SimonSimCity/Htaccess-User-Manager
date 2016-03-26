@@ -2,7 +2,7 @@
 
 class UserController {
 
-	private $templates = "/templates";
+	private $templates = "/templatesEN";
 
 	public function index() {
 		global $userManager, $firewall;

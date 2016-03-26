@@ -2,20 +2,22 @@
 
 class UserController {
 
+	private $templates = "/templates";
+
 	public function index() {
 		global $userManager, $firewall;
 
 		if ($firewall->hasUserAccess())
-			include_once __DIR__ . "/templates/user/index.phtml";
+			include_once __DIR__ . $this->templates . "/user/index.phtml";
 		else {
 			header("HTTP/1.1 403 Forbidden");
-			include_once __DIR__ . "/templates/403.phtml";
+			include_once __DIR__ . $this->templates . "/403.phtml";
 		}
 	}
 
 	public function editPassword() {
 		global $userManager, $firewall;
-		include_once __DIR__."/templates/user/edit.phtml";
+		include_once __DIR__.$this->templates . "/user/edit.phtml";
 	}
 
 	public function updatePassword() {
@@ -37,7 +39,7 @@ class UserController {
 			header("Location: {$_SERVER["SCRIPT_NAME"]}?action=changePassword&success=".(int)$success."&message=".urlencode($message));
 		} else {
 			header("HTTP/1.1 403 Forbidden");
-			include_once __DIR__ . "/templates/403.phtml";
+			include_once __DIR__ . $this->templates . "/403.phtml";
 		}
 	}
 }

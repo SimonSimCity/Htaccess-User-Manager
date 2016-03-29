@@ -27,12 +27,17 @@ class UserController {
 
 			$message = '';
 			$success = false;
-			try {
-				$user = $userManager->getCurrentUser();
-				$user->setPassword($_POST['password']);
-				$success = $userManager->updateUser($user);
-			} catch(Exception $e) {
-				$message = $e->getMessage();
+
+			if ($_POST['password'] !== $_POST['pwretype']) {
+				$message = 'Sorry, passwords do not match.';
+			} else {
+				try {
+					$user = $userManager->getCurrentUser();
+					$user->setPassword($_POST['password']);
+					$success = $userManager->updateUser($user);
+				} catch(Exception $e) {
+					$message = $e->getMessage();
+				}
 			}
 
 			header("HTTP/1.1 303 See Other");

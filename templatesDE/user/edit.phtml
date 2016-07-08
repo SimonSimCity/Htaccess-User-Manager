@@ -32,7 +32,12 @@
 	<form action="<?php echo $_SERVER["SCRIPT_NAME"] ?>?action=updatePassword" method="post">
 		<fieldset>
 			<label for="user_password">neues Passwort:</label>
+			<br>
 			<input type="password" name="password" id="user_password" />
+			<br>
+			<label for="user_password_retype">wiederhole neues Passwort:</label>
+			<br>
+			<input type="password" name="pwretype" id="user_password_retype" />
 		</fieldset>
 
 		<input type="submit" value="Absenden" />

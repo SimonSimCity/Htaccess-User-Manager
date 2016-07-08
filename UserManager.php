@@ -98,7 +98,7 @@ class UserManager {
 	 */
 	public function addUser(User $user) {
 		if ($this->userExists($user->getUsername()))
-			throw new Exception("Der Benutzer existiert bereits.");
+			throw new Exception("User exists already.");
 
 		$this->users[$user->getUsername()] = $user;
 		$this->changed = true;
@@ -110,7 +110,7 @@ class UserManager {
 	 */
 	public function updateUser(User $user) {
 		if (!$this->userExists($user->getUsername()))
-			throw new Exception("Der Benutzer existiert nicht.");
+			throw new Exception("User does not exist.");
 
 		$this->users[$user->getUsername()] = $user;
 		$this->changed = true;

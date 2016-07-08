@@ -50,7 +50,7 @@ class User {
 	 */
 	public function setPassword($password) {
 		if (empty($password))
-			throw new Exception("Ein leeres Passwort ist nicht erlaubt.");
+			throw new Exception("No password supplied.");
 
 		$this->_password = crypt($password, base64_encode($password));
 	}
